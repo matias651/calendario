@@ -1,0 +1,67 @@
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 días: lunes a viernes */
+    grid-template-rows: repeat(33, 40px); /* 33 filas para cada intervalo de 20 minutos (08:00 - 19:00) */
+    grid-gap: 1px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+.time-slot {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.time-slot:hover {
+    background-color: #f0f0f0;
+}
+
+.event {
+    background-color: #33FF57;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.event:hover {
+    background-color: #28a745;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    z-index: 1000;
+}
+
+.dropdown {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.event:hover .dropdown {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
